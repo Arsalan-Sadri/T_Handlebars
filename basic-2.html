@@ -10,12 +10,12 @@
 </head>
 
 <body>
-    <div id="empty-div">This is my div {{emptyDiv}}</div>
+    <div id="empty-div">{{emptyDiv}}</div>
     <script>
         var source = document.getElementById("empty-div").innerHTML;
         var template = Handlebars.compile(source);
         var context = {
-            emptyDiv: "Hello World!"
+            emptyDiv: "Handlebars!"
         };
         var html = template(context);
         document.body.innerHTML = html;

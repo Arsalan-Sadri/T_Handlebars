@@ -10,14 +10,16 @@
 </head>
 
 <body>
+    <h1>Basic Handlebars</h1>
+    <div id="empty-div">Welcome to {{emptyDiv}}</div>
     <script>
-        var source = "<div>{{emptyDiv}}</div>";
+        var source = document.getElementById("empty-div").innerHTML;
         var template = Handlebars.compile(source);
         var context = {
             emptyDiv: "Handlebars!"
         };
         var html = template(context);
-        document.body.innerHTML = html;
+        document.getElementById("empty-div").innerHTML = html;
     </script>
 </body>
 
