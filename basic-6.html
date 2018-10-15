@@ -11,16 +11,13 @@
 
 <body>
     <h1>Basic Handlebars</h1>
-    <div>Welcome to {{emptyDiv}}</div>
+    <div id="empty-div">Welcome to {{emptyDiv}}</div>
     <h1>Goodbye!</h1>
+
     <script>
-        var body = document.body.innerHTML;
-        var template = Handlebars.compile(body);
-        var data = {
+        document.body.innerHTML = Handlebars.compile(document.body.innerHTML)({
             emptyDiv: "Handlebars!"
-        };
-        var html = template(data);
-        document.body.innerHTML = html;
+        });
     </script>
 </body>
 
