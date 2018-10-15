@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Heading 1</h1>
+    <div id="empty-div"></div>
+    <div class="empty-div"></div>
+
+    <script>
+        console.log(document.getElementsByTagName("body")[0]);
+
+        console.log(document.getElementById("empty-div"));
+
+        document.getElementById("empty-div").innerHTML = "No longer an empty div";
+
+        document.getElementsByClassName("empty-div")[0].innerHTML = "No longer an empty div either";
+
+        var p1 = document.createElement("p");
+        p1.innerHTML = "A paragraph!";
+        document.body.append(p1);
+
+        var p2 = document.createElement("p");
+        p2.append("Also a paragraph!");
+        document.body.append(p2);
+
+        var p3 = document.createElement("p");
+        var text = document.createTextNode("Even more paragraph!");
+        p3.append(text);
+        document.body.append(p3);
+    </script>
+</body>
+
+</html>
