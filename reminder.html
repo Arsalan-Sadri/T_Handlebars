@@ -12,17 +12,31 @@
 <body>
 
     <h1>Heading 1</h1>
-    <div id="empty-div"></div>
-    <div class="empty-div"></div>
+    <div id="div1"></div>
+    <div class="div2"></div>
+    <div id="div3">
+        <p id="p1">div3 first child</p>
+        <p>div3 second child</p>
+    </div>
+    <div id="div4">
+        <p id="p2">div4 first child</p>
+        <p>div4 second child</p>
+    </div>
 
     <script>
         console.log(document.getElementsByTagName("body")[0]);
 
-        console.log(document.getElementById("empty-div"));
+        console.log(document.getElementById("div1"));
 
-        document.getElementById("empty-div").innerHTML = "No longer an empty div";
+        document.getElementById("div1").innerHTML = "No longer an empty div";
 
-        document.getElementsByClassName("empty-div")[0].innerHTML = "No longer an empty div either";
+        document.getElementsByClassName("div2")[0].innerHTML = "No longer an empty div either";
+
+        document.getElementById("div3").removeChild(document.getElementById("p1"));
+
+        var p = document.createElement("p");
+        p.innerHTML = "div4 replaced child!";
+        document.getElementById("div4").replaceChild(p, document.getElementById("p2"));
 
         var p1 = document.createElement("p");
         p1.innerHTML = "A paragraph!";
