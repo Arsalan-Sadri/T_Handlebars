@@ -18,10 +18,12 @@
     </script>
 
     <script>
-        var source = document.getElementById("script-template").innerHTML;
-        var html = Handlebars.compile(source)({
+        const source = document.getElementById("script-template").innerHTML;
+        const template = Handlebars.compile(source);
+        const context = {
             emptyDiv: "Handlebars!"
-        });
+        };
+        const html = template(context);
         document.getElementById("empty-div").innerHTML = html;
     </script>
 </body>

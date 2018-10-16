@@ -14,11 +14,16 @@
     <div>Welcome to {{emptyDiv}}</div>
     <div>{{{boldText}}}</div>
     <h1>Goodbye!</h1>
+
     <script>
-        document.body.innerHTML = Handlebars.compile(document.body.innerHTML)({
+        const source = document.body.innerHTML;
+        const template = Handlebars.compile(source);
+        const context = {
             emptyDiv: "Handlebars!",
             boldText: "<b>Some bold text</b>"
-        });
+        };
+        const html = template(context);
+        document.body.innerHTML = html;
     </script>
 </body>
 
