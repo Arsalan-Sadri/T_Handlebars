@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Welcome to {{title}}</h1>
+    <h2>{{{heading}}}</h2>
+    <ul>
+        {{#persons}}
+        <li>
+            <h3>{{name}}</h3>
+            <h3>{{email}}</h3>
+            <h3>{{age}}</h3>
+        </li>
+        {{/persons}}
+    </ul>
+
+    <script>
+        const context = {
+            title: "Handlebars!",
+            heading: "<b>Persons info:</b>",
+            persons: [{
+                    name: "John Doe",
+                    email: "John.Doe@email.com",
+                    age: 34
+                },
+                {
+                    name: "David Jackson",
+                    email: "David.Jackson@email.com",
+                    age: 42
+                },
+                {
+                    name: "Alan Darmoth",
+                    email: "Alan.Darmoth@email.com",
+                    age: 56
+                }
+            ]
+        };
+        const source = document.body.innerHTML;
+        const template = Handlebars.compile(source);
+        const html = template(context);
+        document.body.innerHTML = html;
+    </script>
+
+</body>
+
+</html>
